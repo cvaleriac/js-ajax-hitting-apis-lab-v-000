@@ -16,7 +16,7 @@ function getRepositories() {
 function displayRepositories() {
 
     var repos = JSON.parse(this.responseText);
- 
+
     const repoList = `<ul>${repos.map(repo => {
          return `
          <li>
@@ -26,7 +26,7 @@ function displayRepositories() {
          <a href="#" data-username="${repo.owner.login}" data-repository="${repo.name}" onclick="getBranches(this)">Get Branches</a>
          </li>`
        }).join('')}</ul>`;
- 
+
       document.getElementById('repositories').innerHTML = repoList;
 }
 
